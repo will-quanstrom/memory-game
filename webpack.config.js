@@ -9,15 +9,15 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  devtool: 'eval-source-map',  // new line
-  devServer: {                 // new line
-   contentBase: './dist'      // new line
+  devtool: 'eval-source-map',
+  devServer: {
+   contentBase: './dist'
  },
   plugins: [
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'journal3',
+      title: 'Memory',
       template: './src/index.html',
       inject: 'body'
     })
@@ -28,8 +28,14 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader'
+          'css-loader',
         ]
+      },
+      {
+       test: /\.(png|svg|jpg|gif)$/,
+              use: [
+          'file-loader',
+      ],
       },
       {
         test: /\.js$/,

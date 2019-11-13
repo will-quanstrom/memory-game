@@ -1,19 +1,17 @@
 import './styles.css';
-import { Entry } from './journal3';
-
+import {  } from './memory';
+import chicken from './img/chicken.jpg';
+import $ from 'jquery';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles.css';
 $(document).ready(function() {
-  $('#journal-form').submit(function(event) {
-    event.preventDefault();
-
-    var post = new Entry($('#titleInput').val(), $('#bodyInput').val());
-    console.log(post);
-    // $("#displayTeaser").show();
-    $("#displayTeaser").append('<h3>' + post.getTeaser() + '</h3>');
-    $("#bodyLetterCounter").text("Your post has " + post.countWords() + " words.");
-    console.log(post.countWords());
-    $("#vowelCounter").text(post.countVowels());
-    console.log(post.countVowels());
-
+    $("#1").attr('src', chicken);
 
   });
-});
+
+
+  // $(".grid-item").click(function (event) {
+  // }
+  //
+  //         };
